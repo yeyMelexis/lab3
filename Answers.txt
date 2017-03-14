@@ -1,0 +1,10 @@
+1. The behaviour of these two examples are identical. Because in first case "rst_counter" drived by logical "1" in STATE_1 and in second case "next_rst_counter" drived by logical "1" in STATE_0, but with next posedge clock signal this "rst_counter" will be changed by logical "1" in STATE_1 too.
+
+2. Look figure.
+
+3.Because combinational logic which FSM needs for swiching own states very simple and few increase with increasing number of states. (Look answer 2)
+
+4. One most benefit of registered outputs FSM is non-availability of additional combinational logic which in turn increases delay.
+
+5. Adding either or both "// synopsys full_case parallel_case" directives to the Verilog FSM source code is generally beneficial when coding one-hot or one-hot with zero-idle FSMs. In these cases,it is given that only one bit of the state vector is set and that all other bit-pattern combinationsshould be treated as "don't cares." It is also given that there should be no overlap in the list of case items
+ 
